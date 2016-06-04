@@ -2,6 +2,9 @@
 Notes on the book Clean Code - A Handbook of Agile Software Craftsmanship by Robert C. Martin
 
 # Index
+[Foreword](#foreword)
+
+[Introduction](#introduction)
 1. [Clean Code](#clean-code)
 2. [Meaningful Names](#meaningful-names)
 3. [Functions](#functions)
@@ -19,6 +22,38 @@ Notes on the book Clean Code - A Handbook of Agile Software Craftsmanship by Rob
 15. [JUnit Internals](#junit-internals) 
 16. [Refactoring SerialDate](#refactoring-serialdate) 
 17. [Smells and Heuristics](#smells-and-heuristics) 
+
+
+# <a name="foreword">Foreword</a>
+Small things matter. God is in the details.
+
+80% or more of what we do is quaintly called "maintenance": the act or repair.
+
+They introduce us the concept of Total Productive Maintenance (TMP) (1951 from the Japaneses):
+* **Seiri**: Knowing where things are: naming is crucial.
+* **Seiton**: A piece of code should be where you expect to find it.
+* **Seiso**: Keep the workplace free of unusefull things (comments, etc).
+* **Seiketsu**: Standarization. The group agrees about how to keep the workplace clean.
+* **Shutsuke**: Discipline. Follow the practices.
+
+You should name a variable using the same care with wich you name a first-born child.
+
+They talk about that they found significant indicators that code with consistent indentation style had lower bug densitiy than code with bad indentation.
+
+Try to do the best to leave the campground cleaner than you find it.
+
+The code is the design and Simple Code are their mantras.
+
+In Scrum make refactoring part of your concept of done.
+
+Be honest about the state of your code because code is never perfect.
+
+# <a name="introduction">Introduction</a>
+Measurement of code Quality: WTFs/Minute.
+
+Customers leaving in droves and managers breathing down our necks... Craftsmanship is the answer.
+
+Learning to write clean code is hard work. You must practice it yourself.
 
 # <a name="clean-code">1. Clean Code</a>
 ## There Will Be Code
