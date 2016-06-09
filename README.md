@@ -58,15 +58,52 @@ Learning to write clean code is hard work. You must practice it yourself.
 
 # <a name="clean-code">1. Clean Code</a>
 ## There Will Be Code
+Nonsese: Programmers won't be needed because business people will generate programs from specifications.
+
+The level of abstaction of our programing languages will increase but there will be code.
+
+Well specified requirements can act as executable tests for our code.
+
 ## Bad Code
+
+Bad code can bring a company down.
+
+There are not excuses for bad code, no reasons: your boss does not give you time, you want to finish faster to get more backlog's stories finished...
+
+I will clean it later... **Later equals never**.
+
 ## The Total Cost of Owning a Mess
+It will drive the productivity ever further toward zero.
 ## The Grand Redesign in the Sky
+If you decide to redesign your system, with a different team, maybe you will get:
+* Two teams in a race
+* Years of development are necessary to provide the same features
+* People will leave the company and the redesign becomes a messy for newer members and they want to redesign it again...
+## Attitude
+Why does this happen to code? requirements?, stupid managers?, schedules ?? **No**.
+
+It is all about unprofessionalism.
+
+Most managers want good code. We have to help them to understand the risks of bad code.
 ## The Primal Conundrum
+The only way to go fast is to get the code as clean as possible.
 ## The Art of Clean Code?
+Writing clean code require discipline. We need to work hard to get "code-sense".
 ## What Is Clean Code?
+* Broken windows concept: looks like nobody cares about it
+* Code without test is not clean.
+* Clean code always looks like it was written by someone who cares.
+* **No duplication, one thing, expressiviness, tiny abstractions**.
+* It does pretty much as you expected: obvius, simple and compelling
 ## Schools of Thought
 ## We Are Authors
+* *@author* tells as who we are.
+* To write new code we need to read the old one.
+* The ratio of time spent reading vs writing is 10:1.
 ## The Boy Scout Rule
+**Leave the campground cleaner than you found it**.
+
+The clean up does not have to be something big.
 ## Prequel and Principles
 ## Conclusion
 ## Bibliography
