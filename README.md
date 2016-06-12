@@ -110,26 +110,157 @@ The clean up does not have to be something big.
 
 # <a name="meaningful-names">2. Meaningful Names</a>
 ## Introduction
+Names are everywhere in software: variables, functions, args, classes, packages, files...
 ## Use Intention-Revealing Names
+The name should answer all the big questions:
+* Why it exists?
+* What it does? 
+* How it is used?
+
+Avoid use this like:
+```java
+int d; // elapsed time in days
+```
+Insted of that use a name that specifies what is being measured and his unit:
+```java
+int elapsedTimeInDays;
+```
+Choosing names that reveal intent can make it mucde. What is the purpose of this code?
+
+From this:
+```java
+public List<int[]> getThem() {
+	List<int[]> list1 = new ArrayList<int[]>();
+	for (int[] x : theList)
+		if (x[0] == 4)
+			list1.add(x);
+	return list1;
+}
+```
+We can improve it only with reavealing naming:
+
+```java
+public List<int[]> getFlaggedCells() {
+	List<int[]> flaggedCells = new ArrayList<int[]>();
+	for (int[] cell : gameBoard)
+		if (cell[STATUS_VALUE] == FLAGGED)
+			flaggedCells.add(cell);
+	return flaggedCells;
+}
+```
+And it is still better with a Cell class:
+
+```java
+public List<Cell> getFlaggedCells() {
+	List<Cell> flaggedCells = new ArrayList<Cell>();
+	for (Cell cell : gameBoard)
+		if (cell.isFlagged())
+			flaggedCells.add(cell);
+	return flaggedCells;
+}
+```
 ## Avoid Disinformation 
+If you want to name a group of accounts use **accounts** try to avoid *accountList* (maybe its type is not a List)
+
+Beware of using names that are very similiar *XYZFooBarClassForBlabla* and *XYZFooBarClassForBlablable*
 ## Make Meaningful Distinctions 
+
+Do not use number-series naming: a1, a2, ... aN
+
+```java
+public static void copyChars(char a1[], char a2[]) {
+	for (int i = 0; i < a1.length; i++) {
+		a2[i] = a1[i];
+	}
+}
+```
+This would be much better with **source** and **destination** as argument names.
+
+Avoid Noise words (Info, Data, a, an, the, variable, table, String): 
+* ProductInfo and ProductData are more or less the same.
+* Is nameString better than name? No.
+
+The same for methods, what I should do?: 
+getActiveAccount() getActiveAccounts() getActiveAccountInfo()
+
 ## Use Pronounceable Names
+If you can't pronouce it you can't discuss it without sounding like an idiot.
 ## Use Searchable Names 
+Single letter names and numeric constants are not easy to locate across a body of text.
+i.e.:
+```java
+for (int j=0; j<34; j++) {
+	s += (t[j]*4)/5;
+}
+```
+It's better when has searchable names:
+```java
+int realDaysPerIdealDay = 4;
+const int WORK_DAYS_PER_WEEK = 5;
+int sum = 0;
+for (int j=0; j < NUMBER_OF_TASKS; j++) {
+	int realTaskDays = taskEstimate[j] * realDaysPerIdealDay;
+	int realTaskWeeks = (realdays / WORK_DAYS_PER_WEEK);
+	sum += realTaskWeeks;
+}
+```
 ## Avoid Encodings 
 ## Hungarian Notation 
 ## Member Preﬁxes
 ## Interfaces and Implementations 
+Leave interfaces unadorened:
+*ShapeFactory* and *ShapeFactoryImp* are better than *IShapeFactory* and *ShapeFactory*
 ## Avoid Mental Mapping 
+*r* is the lower-cased version of the url with the host and scheme removed... WTF!
+
+**Clarity is king**: professionals use their powers for goot and write code that others can understand.
 ## Class Names 
+A class name shoud not be a verb. Avoid words like Manager, Processor, Data, or Info.
+Good names could be: Customer, WikiPage, Account, AddressParser.
 ## Method Names
+Methods should have verb or verb phrase names like postPayment, deletePage, save...
+
+When constructors are overloade use static factory:
+```java
+Complex fulcrumPoint = Complex.FromRealNumber(23.0);
+```
+better than
+```java
+Complex fulcrumPoint = new Complex(23.0);
+```
 ## Don’t Be Cute 
+Don't use slang!: whack() insted of kill()
+
+**Say what you mean. Mean what you say.**
 ## Pick One Word per Concept
+If you choose *get()* use it always (instead of fetch, retrieve, etc.)
 ## Don’t Pun 
+Avoid using the same word for two puposes (*add()* method could mean different things in different classes...)
+
+**Make your code as easy as possible to understand**
 ## Use Solution Domain Names 
+Use pattern names: Factory, Visitor, Decorator, etc.
 ## Use Problem Domain Names
+And you could ask a domain expert if you have doubts.
 ## Add Meaningful Context 
+Variables usually don't have a mean by themselves. You will need a context.
+
+Names like: firstName, lastName, street, postalCode, etc. Are names from an address.
+
+If you have problems with context you can add a prefix: addrFirstName, addrLastName, etc.
+
+But It would be better if you put them into a class Adress => you will have a great context.
+
+When a method has a lot of variables with an unclear context you can try to break it into smaller functions.
+
 ## Don’t Add Gratuitous Context 
+Don't use prefix in all your classes/methods to say that they belongs to an specific context.
+Gas Station Deluxe => GSD and then you have: GSDAccountAddress... it is not a good name.
+
+**Shorter names are generally better than longer ones**.
+
 ## Final Words 
+Follow these rules and refactor code to help resolve these problems.
 
 # <a name="functions">3. Functions</a>
 ## Small!
