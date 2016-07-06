@@ -263,36 +263,148 @@ Gas Station Deluxe => GSD and then you have: GSDAccountAddress... it is not a go
 Follow these rules and refactor code to help resolve these problems.
 
 # <a name="functions">3. Functions</a>
+Functions are the first line of organization in any program.
 ## Small!
+First: they should be small. Second: they should be smaller than that.
+
+* Functions should hardly ever be **20 lines long**.
+* Functions should be **transparently obvious**.
+* Each function told a story.
+* Each function led you to a next thing in a compelling order.
+
 ## Blocks and Indenting
+
+The blocks within *if*, *else*, *while*, etc. statements should be one line long, probabily will be a function call.
+
+This function call can have a nice an descriptive name
+
+The indent level of a function should not be grater than one or two.
+
 ## Do One Thing
+
+```
+FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY
+```
+
+A function do one thing though it contains calls to other functions. But those functions should be always one level bellow to the stated name of the funcion.
+
+We create functions to decompose a larger concept (the name of the function) into a set of steps at the next level of abstraction.
+
 ## Sections within Functions 
+A function that is divided into section will be probably doing more than one thing
+
 ## One Level of Abstraction per Function 
+Don't mix level of abstraction in a function. This is always confusing an will bring you a broken window effect.
+
 ## Reading Code from Top to Bottom: The Stepdown Rule
+Write code like if was a top-down set of TO-paragraphs.
+
 ## Switch Statements 
+Switch statements always do N things.
+
+Use them to create polymorphic objects. Abstract Factory pattern.
+
 ## Use Descriptive Names
+You know that you are working with clean code when each routine turns out to be pretty much as you expected.
+
+Use descriptive names. Don't be afraid to make a name long.
+
+Be consistent with your names, try always to use the same verbs, nouns, etc.
+
+*includeSetupAndTeardownPages, includeSetupPages, includeSetupPage...*
+
 ## Function Arguments
+* Zero arguments (niladic)
+* One argument (monadic)
+* Two arguments (dydadic)
+* ~~Three arguments (triadic)~~
+* ~~Four arguments~~
+* ..
+
+Zero arguments > One argument > Two arguments
+
+**Avoid output arguments**, they are not easy to understand.
+
 ## Common Monadic Forms
+* Asking a question abouth that argument.*boolean fileExists("miFile")*
+* Operating on that argument, tranforming and returning *InputStream fileOpen("miFile")*
+* Events to alter the state of the system.
+
+Try to avoid other forms.
+
 ## Flag Arguments 
+Flag arguments (true|false) are ugly. Functions with that do one thing if it is true and another thing if is false.
+
+Split the function in two:
+*render(boolean isSuite) => renderForSuite() , renderForSingleTest()*
+
 ## Dyadic Functions
+They are harder to understand than monadic functions.
+*assertEquals(expected, actual)* ... where the expected should be? 
+
 ## Triads
+The are harder to understand than dyadic functions.
+*assertEquals(msg, expected, actual)* ... now the msg seems to be the expected value.
+
 ## Argument Objects
+When a function needs to have more than two or three arguments some of these argument should be wrapped into a class of ther own.
+*makeCircle(double x, double y, double radius) =>  makeCircle(Point center, double radius);*
+
 ## Argument Lists 
+Function that takes argument lists can be monads, dyads or even tiads:
+*void monad(String... args); void dyad(String name, String... args); void triad(String name, int count, String... args)*
+
 ## Verbs and Keywords
+We can encode the name of the arguments into the funcion name:
+*assertEquals => assertExpectedEqualsActual*
+
+And we can do more meaning to the argument:
+*write(name) => writeField(name)*
+
 ## Have No Side Effects 
+Functions should not do things that you don't expect.
+i.e: checkPassword(login, password) => inside initializes the user session.
+
 ## Output Arguments 
+The should be avoided with OO.
+*void appendFooter(StringBuffer report); => report.appendFooter();*
+
 ## Command Query Separation 
+Functions should either do something or answer something, but not both.
+*attributeExists and setAttribute* should be different functions. Avoid things like *setAndCheckIfExists*
+
 ## Prefer Exceptions to Returning Error Codes 
+Error codes violate Comand Query Separation.
+
+Exceptions can help to separate the happy path code from the error path and that helps to simplificate.
+
 ## Extract Try/Catch Blocks 
+Try/catch's are ugly. It is better to extract try and catch methods.
+
 ## Error Handling Is One Thing
+Methods with try/catch should only have this structure and nothing more.
+
 ## The Error.java Dependency Magnet 
+Error codes are usually in classes like Error.java (whith constants). Avoid that, it is a dependency magnet (it is every where) and nobody wants to change it because you have to recompile/deploy everything.
+
+Use Exceptions instead of Error coedes.
+
 ## Don’t Repeat Yourself 
+Duplication may be the root of all eveil in software.
+
 ## Structured Programming 
+Things like "there should only be one return statement" is unnecessary when you create small functions.
+
 ## How Do You Write Functions Like This? 
+* Write ugly and long functions with a long list of arguments
+* You need to have unit tests that cover all that functions.
+* Then you can to massage and refine that code. You can break everything in clases and keep your test passing.
 ## Conclusion
+Functions are the verbs and classes are the nouns of the language of our system.
+
+You real goal is to tell the story of the System. You have to write functions that help yo to tell that story.
 ## SetupTeardownIncluder 
 ## Bibliography
-
 
 # <a name="comments">4. Comments</a>
 ## Comments Do Not Make Up for Bad Code
