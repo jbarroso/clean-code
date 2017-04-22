@@ -94,7 +94,7 @@ Writing clean code require discipline. We need to work hard to get "code-sense".
 * Code without test is not clean.
 * Clean code always looks like it was written by someone who cares.
 * **No duplication, one thing, expressiviness, tiny abstractions**.
-* It does pretty much as you expected: obvius, simple and compelling
+* It does pretty much as you expected: obvious, simple and compelling
 ## Schools of Thought
 ## We Are Authors
 * *@author* tells as who we are.
@@ -125,7 +125,7 @@ Insted of that use a name that specifies what is being measured and his unit:
 ```java
 int elapsedTimeInDays;
 ```
-Choosing names that reveal intent can make it mucde. What is the purpose of this code?
+Choosing names that reveal intent can make it much easier to understand and change code. What is the purpose of this code?
 
 From this:
 ```java
@@ -213,14 +213,14 @@ Leave interfaces unadorened:
 ## Avoid Mental Mapping 
 *r* is the lower-cased version of the url with the host and scheme removed... WTF!
 
-**Clarity is king**: professionals use their powers for goot and write code that others can understand.
+**Clarity is king**: professionals use their powers for good and write code that others can understand.
 ## Class Names 
 A class name shoud not be a verb. Avoid words like Manager, Processor, Data, or Info.
 Good names could be: Customer, WikiPage, Account, AddressParser.
 ## Method Names
 Methods should have verb or verb phrase names like postPayment, deletePage, save...
 
-When constructors are overloade use static factory:
+When constructors are overloaded use static factory methods with names that describe the arguments:
 ```java
 Complex fulcrumPoint = Complex.FromRealNumber(23.0);
 ```
@@ -237,7 +237,7 @@ If you choose *get()* use it always (instead of fetch, retrieve, etc.)
 ## Don’t Pun 
 Avoid using the same word for two puposes (*add()* method could mean different things in different classes...)
 
-**Make your code as easy as possible to understand**
+**Make your code as easy as possible to understand.**
 ## Use Solution Domain Names 
 Use pattern names: Factory, Visitor, Decorator, etc.
 ## Use Problem Domain Names
