@@ -326,7 +326,7 @@ Zero arguments > One argument > Two arguments
 **Avoid output arguments**, they are not easy to understand.
 
 ## Common Monadic Forms
-* Asking a question abouth that argument.*boolean fileExists("miFile")*
+* Asking a question about that argument.*boolean fileExists("miFile")*
 * Operating on that argument, tranforming and returning *InputStream fileOpen("miFile")*
 * Events to alter the state of the system.
 
@@ -351,7 +351,7 @@ When a function needs to have more than two or three arguments some of these arg
 *makeCircle(double x, double y, double radius) =>  makeCircle(Point center, double radius);*
 
 ## Argument Lists 
-Function that takes argument lists can be monads, dyads or even tiads:
+Function that takes argument lists can be monads, dyads or even triads:
 *void monad(String... args); void dyad(String name, String... args); void triad(String name, int count, String... args)*
 
 ## Verbs and Keywords
@@ -402,46 +402,120 @@ Things like "there should only be one return statement" is unnecessary when you 
 ## Conclusion
 Functions are the verbs and classes are the nouns of the language of our system.
 
-You real goal is to tell the story of the System. You have to write functions that help yo to tell that story.
+You real goal is to tell the story of the System. You have to write functions that help you to tell that story.
 ## SetupTeardownIncluder 
 ## Bibliography
 
 # <a name="comments">4. Comments</a>
+If we were expressive enough in our programming language we would not need comments.
+
+The proper use of comments is to compensate for our failure to express ourself in code.
+
+Comments are always failures. **Express yourself in code!**
+
+Code changes and evolves and comments lie.
+
 ## Comments Do Not Make Up for Bad Code
+"Ooh, I would better comment that!" => No! You would be better clean it!
+
 ## Explain Yourself in Code 
+This:
+```java
+// Check to see if the employee is eligilbe for full benefits
+if (employee.flags && HOURLY_FLAG) && (employee.age >65)) {
+```
+vs:
+```java
+// Check to see if the employee is eligilbe for full benefits
+if (employee.isEligibleForFullBenefits()){
+```
+=> **Create a function tha syas the same thing as the comment you want to write**
+
 ## Good Comments
-## Legal Comments
-## Informative Comments
-## Explanation of Intent
-## Clariﬁcation
-## Warning of Consequences 
-## TODO Comments
-## Ampliﬁcation
-## Javadocs in Public APIs
+The only truly good comment is the comment you found a way not to write.
+### Legal Comments
+Put all the terms and conditios into a extrernal document.
+### Informative Comments
+Useful information about hte implementation and taken decisions.
+### Explanation of Intent
+Take care that ther is no better way, and then take enven more care that they are accurate.
+### Clariﬁcation
+If you do it take care that there is no better way and the are accurate.
+### Warning of Consequences 
+Warn other programmers about certain consequences:
+- Maybe a test that lasts a lot => try to use @Ignore
+- Something that is not thread safe and you have to use "new" each time.
+### TODO Comments
+It is not an excuse to leave bad code in the system.
+
+You do not want your code to be littered with TODOS => san them regularly and eliminate the ones you can.
+
+### Ampliﬁcation
+If something is very very important you can amplify it.
+### Javadocs in Public APIs
+If you are writing a public API => write good docs for it. (but they can lie as any other kind of comment).
 ## Bad Comments 
-## Mumbling 
-## Redundant Comments 
-## Misleading Comments
-## Mandated Comments
-## Journal Comments
-## Noise Comments 
-## Scary Noise 
-## Don’t Use a Comment When You Can Use a
-## Function or a Variable
-## Position Markers
-## Closing Brace Comments
-## Attributions and Bylines
-## Commented-Out Code
-## HTML Comments 
-## Nonlocal Information 
-## Too Much Information 
-## Inobvious Connection
-## Function Headers
-## Javadocs in Nonpublic Code 
-## Example
-## Bibliography
+Most comments fall into this category.
+### Mumbling 
+A catch block empty with a comment => was the author trying to tell himself to come later to do it?
+
+Any comment that forces you to look in another module to know the meaning is wrong.
+### Redundant Comments 
+* Less information than the code.
+* It is not easier to read than the code.
+* It is less precise
+### Misleading Comments
+### Mandated Comments
+**A rule that says that every function/property/variable must have a javadoc is stupid**
+
+You will finally get things like: @param author The author
+### Journal Comments
+We have scm's => they should be completly removed.
+### Noise Comments 
+Auto generated or very obvious comments that are nothing but noise.
+### Scary Noise 
+Maybe with copy/paste errores... are they a bug?
+### Don’t Use a Comment When You Can Use a Function or a Variable
+Consider the following stretch of code:
+
+```java
+// does the module from the global list <mod> depend on the
+// subsystem we are part of?
+if (smodule.getDependSubsystems().contains(subSysMod.getSubSystem()))
+```
+This could be rephrased without the comment as
+```java
+ArrayList moduleDependees = smodule.getDependSubsystems();
+String ourSubSystem = subSysMod.getSubSystem();
+if (moduleDependees.contains(ourSubSystem))
+```
+### Position Markers
+Things like:
+```java
+// Actions ////////////////////////////////////////////////
+```
+Noise, obviouse and usually ignored... do not use banners
+### Closing Brace Comments
+Try to shortend your functions instead.
+### Attributions and Bylines
+Added by:... SCM's are a better place for this.
+### Commented-Out Code
+Trust in SCM's... **delete the code**.
+### HTML Comments 
+HTML in source code comments is an abomination: it makes them really hard to read.
+### Nonlocal Information 
+The comment should describe the code it appears near.
+### Too Much Information 
+### Inobvious Connection
+Maybe the comment needs its own explanation...
+### Function Headers
+Short functions do not need much description. We prefer well-chosen names than a comment header.
+### Javadocs in Nonpublic Code 
+### Example
+### Bibliography
 
 # <a name="formatting">5. Formatting</a>
+// TODO
 ## The Purpose of Formatting 
 ## Vertical Formatting 
 ## The Newspaper Metaphor 
