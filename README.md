@@ -665,15 +665,126 @@ If the body of a while/for is a dummy make the body indented and surrounded by b
 See the book.
 
 # <a name="objects-and-data-structures">6. Objects and Data Structures</a>
+We keep our variables private. Nobody depends on them. Freedom to change their type or implementation. If you don't need them don't expose the with public getters an setters!
 ## Data Abstraction
+Hiding implementation is about abstractions. 
+
+A class does not simply push its variables out through getters and setters. Rather it exposes abstract interfaces that allow its users to manipulate the essence of the data, without having to know its implementation.
+
+Concrete Point
+```java
+public class Point {
+ public double x;
+ public double y;
+}
+```
+Abstract Point
+```java
+public interface Point {
+ double getX();
+ double getY();
+ void setCartesian(double x, double y);
+ double getR();
+ double getTheta();
+ void setPolar(double r, double theta);
+}
+```
+Abstact point its hidding its implementation. The methods enforce an access policy => read cordinates independently but write them together.
+
+Concrete Vehicle
+```java
+public interface Vehicle {
+ double getFuelTankCapacityInGallons();
+ double getGallonsOfGasoline();
+}
+```
+Abstract Vehicle
+```java
+public interface Vehicle {
+ double getPercentFuelRemaining();
+}
+```
+Abstract vehicle doesn't expose the details of the data.
+
+**The worst option is to blithely add getters and setters**
 ## Data/Object Anti-Symmetry 
+**Objects** vs **Data structures**
+* Objects hide their data behind abstractions and expose functions that operate on that data.
+* Data structures expose their data and have no meaningful functions.
+
+**OO code** vs **Procedural code**
+* OO code makes it easy to add new classes without changing existing functions
+* Procedural code makes it easy to add new functions without changing the existing data structures.
+* OO code makes hard to add new functions becaulse all the classes must change.
+* Procedural code makes it hard to add new data structures because all the functions must change.
+
+**Sometimes you need data structures and sometimes you need objects!**
 ## The Law of Demeter
-## Train Wrecks 
-## Hybrids 
-## Hiding Structure 
-## Data Transfer Objects
-## Active Record
+**talk to friends, not to stangers**
+
+A mehtod *f* of a class *C* should only call methos of these:
+* C
+* An object created by *f*
+* An object passed as an argument to *f*
+* An object held in an instance variable of *C*
+
+Avoid this (called train wreck):
+```java
+final String outputDir = ctxt.getOptions().getScratchDir().getAbsolutePath();
+```
+Try to split them:
+```java
+Options opts = ctxt.getOptions();
+File scratchDir = opts.getScratchDir();
+final String outputDir = scratchDir.getAbsolutePath();
+```
+### Train Wrecks 
+=> bunch of coupled train cars!
+Is this a iolation of Demeter's Law? it depends...
+* if context, options and scratchDir are objects is a clear violation of the Law.
+* if they are data structures with no behavior Demeter's Law does not apply.
+
+If it was a data structure you could use it this way:
+```java
+final String outputDir = ctxt.options.scratchDir.absolutePath;
+```
+### Hybrids 
+Public fields + methods => Avoid creating them. Wost of both words: hard to add new functions and hard to add new data structures.
+
+### Hiding Structure 
+You could think in these options:
+```java
+ctxt.getAbsolutePathOfScratchDirectoryOption();
+```
+=> explosion of methods in ctxt object
+or
+```java
+ctx.getScratchDirectoryOption().getAbsolutePath()
+```
+=> it returns a data structure, not an object.
+
+Neither options fells good.
+
+**You tell an object to do something you should not be asking it about its internasl**
+Why do you want to know the absolute path?.. to create something:
+
+```java
+BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName);
+```
+=> ctx hide its internals and we are not violating Dementers' Law.
+### Data Transfer Objects
+Structures to comunicate wit databases, parsing messages from sockets...
+
+You usually use Beans => private properties with setters and getters. It is ok for OO purist but no other benefits. 
+### Active Record
+**Data structures** with public (or beans) properties nad methos like save, find, etc.
+
+Developers put business logic in them => Error!
+
 ## Conclusion
+Choose the right approach!
+* Flexibility to add new data types => objects
+* Flexibility to add new behaviors => data types and procedures
 ## Bibliography
 
 # <a name="error-handling">7. Error Handling</a>
