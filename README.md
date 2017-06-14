@@ -34,12 +34,12 @@ They introduce us the concept of Total Productive Maintenance (TMP) (1951 from t
 * **Seiri**: Knowing where things are: naming is crucial.
 * **Seiton**: A piece of code should be where you expect to find it.
 * **Seiso**: Keep the workplace free of unusefull things (comments, etc).
-* **Seiketsu**: Standarization. The group agrees about how to keep the workplace clean.
+* **Seiketsu**: Standardization. The group agrees about how to keep the workplace clean.
 * **Shutsuke**: Discipline. Follow the practices.
 
-You should name a variable using the same care with wich you name a first-born child.
+You should name a variable using the same care with which you name a first-born child.
 
-They talk about that they found significant indicators that code with consistent indentation style had lower bug densitiy than code with bad indentation.
+They talk about that they found significant indicators that code with consistent indentation style had lower bug density than code with bad indentation.
 
 Try to do the best to leave the campground cleaner than you find it.
 
@@ -58,9 +58,9 @@ Learning to write clean code is hard work. You must practice it yourself.
 
 # <a name="clean-code">1. Clean Code</a>
 ## There Will Be Code
-Nonsese: Programmers won't be needed because business people will generate programs from specifications.
+Nonsense: Programmers won't be needed because business people will generate programs from specifications.
 
-The level of abstaction of our programing languages will increase but there will be code.
+The level of abstraction of our programing languages will increase but there will be code.
 
 Well specified requirements can act as executable tests for our code.
 
@@ -93,7 +93,7 @@ Writing clean code require discipline. We need to work hard to get "code-sense".
 * Broken windows concept: looks like nobody cares about it
 * Code without test is not clean.
 * Clean code always looks like it was written by someone who cares.
-* **No duplication, one thing, expressiviness, tiny abstractions**.
+* **No duplication, one thing, expressiveness, tiny abstractions**.
 * It does pretty much as you expected: obvious, simple and compelling
 ## Schools of Thought
 ## We Are Authors
@@ -121,7 +121,7 @@ Avoid use this like:
 ```java
 int d; // elapsed time in days
 ```
-Insted of that use a name that specifies what is being measured and his unit:
+Instead of that use a name that specifies what is being measured and his unit:
 ```java
 int elapsedTimeInDays;
 ```
@@ -162,7 +162,7 @@ public List<Cell> getFlaggedCells() {
 ## Avoid Disinformation 
 If you want to name a group of accounts use **accounts** try to avoid *accountList* (maybe its type is not a List)
 
-Beware of using names that are very similiar *XYZFooBarClassForBlabla* and *XYZFooBarClassForBlablable*
+Beware of using names that are very similar *XYZFooBarClassForBlabla* and *XYZFooBarClassForBlablable*
 ## Make Meaningful Distinctions 
 
 Do not use number-series naming: a1, a2, ... aN
@@ -184,7 +184,7 @@ The same for methods, what I should do?:
 getActiveAccount() getActiveAccounts() getActiveAccountInfo()
 
 ## Use Pronounceable Names
-If you can't pronouce it you can't discuss it without sounding like an idiot.
+If you can't pronounce it you can't discuss it without sounding like an idiot.
 ## Use Searchable Names 
 Single letter names and numeric constants are not easy to locate across a body of text.
 i.e.:
@@ -208,14 +208,15 @@ for (int j=0; j < NUMBER_OF_TASKS; j++) {
 ## Hungarian Notation 
 ## Member Preﬁxes
 ## Interfaces and Implementations 
-Leave interfaces unadorened:
+Leave interfaces unadorned:
+
 *ShapeFactory* and *ShapeFactoryImp* are better than *IShapeFactory* and *ShapeFactory*
 ## Avoid Mental Mapping 
 *r* is the lower-cased version of the url with the host and scheme removed... WTF!
 
 **Clarity is king**: professionals use their powers for good and write code that others can understand.
 ## Class Names 
-A class name shoud not be a verb. Avoid words like Manager, Processor, Data, or Info.
+A class name should not be a verb. Avoid words like Manager, Processor, Data, or Info.
 Good names could be: Customer, WikiPage, Account, AddressParser.
 ## Method Names
 Methods should have verb or verb phrase names like postPayment, deletePage, save...
@@ -229,13 +230,13 @@ better than
 Complex fulcrumPoint = new Complex(23.0);
 ```
 ## Don’t Be Cute 
-Don't use slang!: whack() insted of kill()
+Don't use slang!: whack() instead of kill()
 
 **Say what you mean. Mean what you say.**
 ## Pick One Word per Concept
 If you choose *get()* use it always (instead of fetch, retrieve, etc.)
 ## Don’t Pun 
-Avoid using the same word for two puposes (*add()* method could mean different things in different classes...)
+Avoid using the same word for two purposes (*add()* method could mean different things in different classes...)
 
 **Make your code as easy as possible to understand.**
 ## Use Solution Domain Names 
@@ -249,7 +250,7 @@ Names like: firstName, lastName, street, postalCode, etc. Are names from an addr
 
 If you have problems with context you can add a prefix: addrFirstName, addrLastName, etc.
 
-But It would be better if you put them into a class Adress => you will have a great context.
+But It would be better if you put them into a class Address => you will have a great context.
 
 When a method has a lot of variables with an unclear context you can try to break it into smaller functions.
 
@@ -274,11 +275,11 @@ First: they should be small. Second: they should be smaller than that.
 
 ## Blocks and Indenting
 
-The blocks within *if*, *else*, *while*, etc. statements should be one line long, probabily will be a function call.
+The blocks within *if*, *else*, *while*, etc. statements should be one line long, probably will be a function call.
 
-This function call can have a nice an descriptive name
+This function call can have a nice and descriptive name
 
-The indent level of a function should not be grater than one or two.
+The indent level of a function should not be greater than one or two.
 
 ## Do One Thing
 
@@ -286,7 +287,7 @@ The indent level of a function should not be grater than one or two.
 FUNCTIONS SHOULD DO ONE THING. THEY SHOULD DO IT WELL. THEY SHOULD DO IT ONLY
 ```
 
-A function do one thing though it contains calls to other functions. But those functions should be always one level bellow to the stated name of the funcion.
+A function do one thing though it contains calls to other functions. But those functions should be always one level below to the stated name of the function.
 
 We create functions to decompose a larger concept (the name of the function) into a set of steps at the next level of abstraction.
 
@@ -294,7 +295,7 @@ We create functions to decompose a larger concept (the name of the function) int
 A function that is divided into section will be probably doing more than one thing
 
 ## One Level of Abstraction per Function 
-Don't mix level of abstraction in a function. This is always confusing an will bring you a broken window effect.
+Don't mix level of abstraction in a function. This is always confusing and will bring you a broken window effect.
 
 ## Reading Code from Top to Bottom: The Stepdown Rule
 Write code like if was a top-down set of TO-paragraphs.
@@ -327,7 +328,7 @@ Zero arguments > One argument > Two arguments
 
 ## Common Monadic Forms
 * Asking a question about that argument.*boolean fileExists("miFile")*
-* Operating on that argument, tranforming and returning *InputStream fileOpen("miFile")*
+* Operating on that argument, transforming and returning *InputStream fileOpen("miFile")*
 * Events to alter the state of the system.
 
 Try to avoid other forms.
@@ -374,7 +375,7 @@ Functions should either do something or answer something, but not both.
 *attributeExists and setAttribute* should be different functions. Avoid things like *setAndCheckIfExists*
 
 ## Prefer Exceptions to Returning Error Codes 
-Error codes violate Comand Query Separation.
+Error codes violate Command Query Separation.
 
 Exceptions can help to separate the happy path code from the error path and that helps to simplificate.
 
@@ -385,12 +386,12 @@ Try/catch's are ugly. It is better to extract try and catch methods.
 Methods with try/catch should only have this structure and nothing more.
 
 ## The Error.java Dependency Magnet 
-Error codes are usually in classes like Error.java (whith constants). Avoid that, it is a dependency magnet (it is every where) and nobody wants to change it because you have to recompile/deploy everything.
+Error codes are usually in classes like Error.java (with constants). Avoid that, it is a dependency magnet (it is everywhere) and nobody wants to change it because you have to recompile/deploy everything.
 
-Use Exceptions instead of Error coedes.
+Use Exceptions instead of Error codes.
 
 ## Don’t Repeat Yourself 
-Duplication may be the root of all eveil in software.
+Duplication may be the root of all evil in software.
 
 ## Structured Programming 
 Things like "there should only be one return statement" is unnecessary when you create small functions.
@@ -398,7 +399,7 @@ Things like "there should only be one return statement" is unnecessary when you 
 ## How Do You Write Functions Like This? 
 * Write ugly and long functions with a long list of arguments
 * You need to have unit tests that cover all that functions.
-* Then you can to massage and refine that code. You can break everything in clases and keep your test passing.
+* Then you can to massage and refine that code. You can break everything in classes and keep your test passing.
 ## Conclusion
 Functions are the verbs and classes are the nouns of the language of our system.
 
@@ -409,7 +410,7 @@ You real goal is to tell the story of the System. You have to write functions th
 # <a name="comments">4. Comments</a>
 If we were expressive enough in our programming language we would not need comments.
 
-The proper use of comments is to compensate for our failure to express ourself in code.
+The proper use of comments is to compensate for our failure to express yourself in code.
 
 Comments are always failures. **Express yourself in code!**
 
@@ -429,16 +430,16 @@ vs:
 // Check to see if the employee is eligilbe for full benefits
 if (employee.isEligibleForFullBenefits()){
 ```
-=> **Create a function tha syas the same thing as the comment you want to write**
+=> **Create a function that says the same thing as the comment you want to write**
 
 ## Good Comments
 The only truly good comment is the comment you found a way not to write.
 ### Legal Comments
-Put all the terms and conditios into a extrernal document.
+Put all the terms and conditions into a external document.
 ### Informative Comments
-Useful information about hte implementation and taken decisions.
+Useful information about the implementation and taken decisions.
 ### Explanation of Intent
-Take care that ther is no better way, and then take enven more care that they are accurate.
+Take care that there is no better way, and then take even more care that they are accurate.
 ### Clariﬁcation
 If you do it take care that there is no better way and the are accurate.
 ### Warning of Consequences 
@@ -470,7 +471,7 @@ Any comment that forces you to look in another module to know the meaning is wro
 
 You will finally get things like: @param author The author
 ### Journal Comments
-We have scm's => they should be completly removed.
+We have scm's => they should be completely removed.
 ### Noise Comments 
 Auto generated or very obvious comments that are nothing but noise.
 ### Scary Noise 
@@ -494,9 +495,9 @@ Things like:
 ```java
 // Actions ////////////////////////////////////////////////
 ```
-Noise, obviouse and usually ignored... do not use banners
+Noise, obvious and usually ignored... do not use banners
 ### Closing Brace Comments
-Try to shortend your functions instead.
+Try to shorten your functions instead.
 ### Attributions and Bylines
 Added by:... SCM's are a better place for this.
 ### Commented-Out Code
@@ -515,7 +516,7 @@ Short functions do not need much description. We prefer well-chosen names than a
 ### Bibliography
 
 # <a name="formatting">5. Formatting</a>
-We want people to perceive that profesionals have been at work... not to see a scrambled mass of code that looks like it was written by a bevy of drunken sailors.
+We want people to perceive that professionals have been at work... not to see a scrambled mass of code that looks like it was written by a bevy of drunken sailors.
 
 **You should take care your code is nicely formatted**
 
@@ -529,15 +530,15 @@ The style and discipline survives to changes.
 ## Vertical Formatting 
 Small files are easier to understand than large files.
 
-It is possible to buld significand system(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
+It is possible to build significand system(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
 ## The Newspaper Metaphor 
 **We would like a source file to be like a newspaper article**:
 - At the top you expect a headline
-- The first paragraph gives you a sypnopsis  of the whole story.
+- The first paragraph gives you a synopsis  of the whole story.
 - As you continue down-ward the details increase
 
 In a source file: 
-high-level concepts and algoriths => lowest level functios and details
+high-level concepts and algorithms => lowest level functions and details
 
 ## Vertical Openness Between Concepts 
 * line => expression or clause.
@@ -579,12 +580,12 @@ Our functions are short -> local variables at the top.
 Control variables for loops => declare them within the loop statement
 ### Instance variables
 Should be declared at the top of the class.
-Everybody should know where togo to see the declarations.
+Everybody should know where to go to see the declarations.
 ### Dependent functions
 If one functions calls another they should be vertically close, an the caller should be above the calle, if it is possible.
 ### Conceptual Affinity
 Group of functions performing a similar operation.
-They share commong naming scheme and perform variations of the same task. We want them to be close together.
+They share common naming scheme and perform variations of the same task. We want them to be close together.
 ## Vertical Ordering 
 Downward direction => flow from high level to low level
 ## Horizontal Formatting
@@ -595,7 +596,7 @@ You should never have to scroll to the right
 ## Horizontal Openness and Density 
 We use white spaces in:
 * Operators to accentuate them.
-* Arguments in function calls and definitios (after the comma).
+* Arguments in function calls and definitions (after the comma).
 
 Don't put white spaces between function's name and the opening parenthesis => They are closely related
 
@@ -620,7 +621,7 @@ public class Quadratic {
 ## Horizontal Alignment
 Horizontal alignment is not useful:
 * You read down the list of variable names without looking a their types.
-* You look down the list of rvalues without ever seeing the assigment operator.
+* You look down the list of rvalues without ever seeing the assignment operator.
 * Automatic reformatting tools usually eliminate it.
 Example:
 ```java
@@ -654,7 +655,7 @@ public class FitNesseExpediter implements ResponseSender
 ## Indentation
 **Without indentation programs would be virtually unreadable by humans**
 
-Try to avoid breaking rules colapsing everything in one line with short if's, loops, functions.
+Try to avoid breaking rules collapsing everything in one line with short if's, loops, functions.
 
 ## Dummy Scopes
 If the body of a while/for is a dummy make the body indented and surrounded by braces.
@@ -689,7 +690,7 @@ public interface Point {
  void setPolar(double r, double theta);
 }
 ```
-Abstact point its hidding its implementation. The methods enforce an access policy => read cordinates independently but write them together.
+Abstract point it's hiding its implementation. The methods enforce an access policy => read coordinates independently but write them together.
 
 Concrete Vehicle
 ```java
@@ -715,14 +716,14 @@ Abstract vehicle doesn't expose the details of the data.
 **OO code** vs **Procedural code**
 * OO code makes it easy to add new classes without changing existing functions
 * Procedural code makes it easy to add new functions without changing the existing data structures.
-* OO code makes hard to add new functions becaulse all the classes must change.
+* OO code makes hard to add new functions because all the classes must change.
 * Procedural code makes it hard to add new data structures because all the functions must change.
 
 **Sometimes you need data structures and sometimes you need objects!**
 ## The Law of Demeter
-**talk to friends, not to stangers**
+**talk to friends, not to strangers**
 
-A mehtod *f* of a class *C* should only call methos of these:
+A method *f* of a class *C* should only call methods of these:
 * C
 * An object created by *f*
 * An object passed as an argument to *f*
@@ -740,7 +741,7 @@ final String outputDir = scratchDir.getAbsolutePath();
 ```
 ### Train Wrecks 
 => bunch of coupled train cars!
-Is this a iolation of Demeter's Law? it depends...
+Is this a violation of Demeter's Law? it depends...
 * if context, options and scratchDir are objects is a clear violation of the Law.
 * if they are data structures with no behavior Demeter's Law does not apply.
 
@@ -749,7 +750,7 @@ If it was a data structure you could use it this way:
 final String outputDir = ctxt.options.scratchDir.absolutePath;
 ```
 ### Hybrids 
-Public fields + methods => Avoid creating them. Wost of both words: hard to add new functions and hard to add new data structures.
+Public fields + methods => Avoid creating them. Worst of both words: hard to add new functions and hard to add new data structures.
 
 ### Hiding Structure 
 You could think in these options:
@@ -765,19 +766,19 @@ ctx.getScratchDirectoryOption().getAbsolutePath()
 
 Neither options fells good.
 
-**You tell an object to do something you should not be asking it about its internasl**
+**You tell an object to do something you should not be asking it about its internals**
 Why do you want to know the absolute path?.. to create something:
 
 ```java
 BufferedOutputStream bos = ctxt.createScratchFileStream(classFileName);
 ```
-=> ctx hide its internals and we are not violating Dementers' Law.
+=> ctx hide its internals and we are not violating Demeters' Law.
 ### Data Transfer Objects
-Structures to comunicate wit databases, parsing messages from sockets...
+Structures to communicate with databases, parsing messages from sockets...
 
 You usually use Beans => private properties with setters and getters. It is ok for OO purist but no other benefits. 
 ### Active Record
-**Data structures** with public (or beans) properties nad methos like save, find, etc.
+**Data structures** with public (or beans) properties and methods like save, find, etc.
 
 Developers put business logic in them => Error!
 
@@ -788,7 +789,7 @@ Choose the right approach!
 ## Bibliography
 
 # <a name="error-handling">7. Error Handling</a>
-Thigs can go wrong, we as programmers are responsible for making sure that our codes does what it needs to do => **and should be clear!**
+Things can go wrong, we as programmers are responsible for making sure that our codes does what it needs to do => **and should be clear!**
 
 Error handling is important but if it obscures logic it's wrong.
 ## Use Exceptions Rather Than Return Codes 
@@ -809,7 +810,7 @@ private void tryToShutDown() throws DeviceShutDownError {
 }
 ```
 ## Write Your Try-Catch-Finally Statement First 
-Try blocks are like transactios => *catch* has to leave your program in a consistent state, no matther what happens in the try.
+Try blocks are like transactions => *catch* has to leave your program in a consistent state, no matter what happens in the try.
 
 Write test that force exceptions and add behavior to satisfy your test.
 
@@ -826,10 +827,10 @@ Encapsulation is broken because all functions in the path of a throw must know a
 Pass enough information to be able to log the error in the catch.
 
 ## Deﬁne Exception Classes in Terms of a Caller’s Needs
-Sometimes is ver useful to write a simple wrapper that catches an translates exceptions from a third-party API => minimize the depencencies upon it and you can move to other different library without much penalty.
+Sometimes is very useful to write a simple wrapper that catches an translates exceptions from a third-party API => minimize the dependencies upon it and you can move to other different library without much penalty.
 
 ## Deﬁne the Normal Flow 
-SPECIAL CASE PATTERN [Fowler]: you create a class or configure an object so that it handles a especial case for you => the client code does not have to deal with excepcional behavior because is encapsulated. 
+SPECIAL CASE PATTERN [Fowler]: you create a class or configure an object so that it handles a especial case for you => the client code does not have to deal with exceptional behavior because is encapsulated. 
 
 Example:
 ```java
@@ -858,7 +859,7 @@ If you return null then you have to manage "the null" with if's...".
 
 When we return null we are creating work for ourselves.
 
-You can return an empty list an clean up the code:
+You can return an empty list and clean up the code:
 
 ```java
 List<Employee> employees = getEmployees();
@@ -881,13 +882,13 @@ public List<Employee> getEmployees() {
 }
 ```
 ## Don’t Pass Null 
-**Returning null from methos is bad, but passing null into methos is worse**
+**Returning null from methods is bad, but passing null into methods is worse**
 
-You have to deal with null, with if's or with assertions at the begining asserts are good documentation).
+You have to deal with null, with if's or with assertions at the beginning asserts are good documentation).
 
 A null in an argument is an indication of a problem.
 ## Conclusion
-Clean code is readable, buit it must also be robust! These are not conflicting goals.
+Clean code is readable, but it must also be robust! These are not conflicting goals.
 ## Bibliography
 
 # <a name="boundaries">8. Boundaries</a>
@@ -900,7 +901,7 @@ Example: java.util.Map
 Map is an interface with a lot of methods: clear, containsKey, containsValue, get, isEmpty, put, putAll, remove, size...
 It is very flexible, any user can add items of any type to nay Map.
 
-If we need a Map of Sensors yo can create something like:
+If we need a Map of Sensors you can create something like:
 ```java
 // Without generics
 Map sensors = new HashMap();
@@ -925,7 +926,7 @@ public class Sensor {
 Avoid returning it or accepting it as an argument in public APIs.
 
 ## Exploring and Learning Boundaries
-**Learning tests** instead of experimenting an trying out the new stuff in our production code, we could write some tests to explore our understanding of the thir-party code.
+**Learning tests** instead of experimenting an trying out the new stuff in our production code, we could write some tests to explore our understanding of the third-party code.
 ## Learning log4j 
 ## Learning Tests Are Better Than Free
 With each release comes a new risk => we run the learning tests to see the changes.
@@ -934,7 +935,7 @@ Without these tests the migration is easier, without them we could stay with the
 ## Using Code That Does Not Yet Exist
 Sometimes you have boundaries in your system that represents things that had not been designed yet.
 
-You can create your own interface with the idea of how this should work and implement a Fake implementation for testing propuses.
+You can create your own interface with the idea of how this should work and implement a Fake implementation for testing purposes.
 See the Adapter pattern.
 ## Clean Boundaries 
 When we use code that is out of our control special care must be taken to protect our investment and make sure future change is not too costly.
