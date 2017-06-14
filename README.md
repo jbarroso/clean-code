@@ -137,7 +137,7 @@ public List<int[]> getThem() {
 	return list1;
 }
 ```
-We can improve it only with reavealing naming:
+We can improve it only with revealing naming:
 
 ```java
 public List<int[]> getFlaggedCells() {
@@ -348,7 +348,7 @@ The are harder to understand than dyadic functions.
 *assertEquals(msg, expected, actual)* ... now the msg seems to be the expected value.
 
 ## Argument Objects
-When a function needs to have more than two or three arguments some of these argument should be wrapped into a class of ther own.
+When a function needs to have more than two or three arguments some of these argument should be wrapped into a class of their own.
 *makeCircle(double x, double y, double radius) =>  makeCircle(Point center, double radius);*
 
 ## Argument Lists 
@@ -356,7 +356,7 @@ Function that takes argument lists can be monads, dyads or even triads:
 *void monad(String... args); void dyad(String name, String... args); void triad(String name, int count, String... args)*
 
 ## Verbs and Keywords
-We can encode the name of the arguments into the funcion name:
+We can encode the name of the arguments into the function name:
 *assertEquals => assertExpectedEqualsActual*
 
 And we can do more meaning to the argument:
@@ -422,12 +422,12 @@ Code changes and evolves and comments lie.
 ## Explain Yourself in Code 
 This:
 ```java
-// Check to see if the employee is eligilbe for full benefits
+// Check to see if the employee is eligible for full benefits
 if (employee.flags && HOURLY_FLAG) && (employee.age >65)) {
 ```
 vs:
 ```java
-// Check to see if the employee is eligilbe for full benefits
+// Check to see if the employee is eligible for full benefits
 if (employee.isEligibleForFullBenefits()){
 ```
 => **Create a function that says the same thing as the comment you want to write**
@@ -435,7 +435,7 @@ if (employee.isEligibleForFullBenefits()){
 ## Good Comments
 The only truly good comment is the comment you found a way not to write.
 ### Legal Comments
-Put all the terms and conditions into a external document.
+Put all the terms and conditions into an external document.
 ### Informative Comments
 Useful information about the implementation and taken decisions.
 ### Explanation of Intent
@@ -589,7 +589,7 @@ They share common naming scheme and perform variations of the same task. We want
 ## Vertical Ordering 
 Downward direction => flow from high level to low level
 ## Horizontal Formatting
-Programmers cleary prefer short lines.
+Programmers clearly prefer short lines.
 **Keep your lines short!**
 **Limit 120 characters**
 You should never have to scroll to the right
@@ -845,7 +845,7 @@ vs:
 ```java
 MealExpenses expenses = expenseReportDAO.getMeals(employee.getID());
 m_total += expenses.getTotal();
-// the Excepction is handled in the DAO and getMails returns
+// the Exception is handled in the DAO and getMails returns
 // PerDiemMealExpenses if an error is thrown...
 public class PerDiemMealExpenses implements MealExpenses {
  public int getTotal() {
