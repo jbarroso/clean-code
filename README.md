@@ -1198,6 +1198,9 @@ We incorporate new features by extending the system, not by making modifications
 ### C3: Redundant Comment 
 ### C4: Poorly Written Comment
 ### C5: Commented-Out Code 
+**Just don't do it** If you want to do this; just slap yourself instead and ask what is wrong with me. Most people won't delete others commented out code since they assume there is a good reason for it. So it grows stale like a fine cheese(but bad cheese).
+
+
 
 ## Environment 
 ### E1: Build Requires More Than One Step
