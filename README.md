@@ -33,7 +33,7 @@ Small things matter. God is in the details.
 They introduce us the concept of Total Productive Maintenance (TMP) (1951 from the Japaneses):
 * **Seiri**: Knowing where things are: naming is crucial.
 * **Seiton**: A piece of code should be where you expect to find it.
-* **Seiso**: Keep the workplace free of unusefull things (comments, etc).
+* **Seiso**: Keep the workplace free of unuseful things (comments, etc).
 * **Seiketsu**: Standardization. The group agrees about how to keep the workplace clean.
 * **Shutsuke**: Discipline. Follow the practices.
 
