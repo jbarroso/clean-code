@@ -125,7 +125,7 @@ Instead of that use a name that specifies what is being measured and his unit:
 ```java
 int elapsedTimeInDays;
 ```
-Choosing names that reveal intent can make it much easier to understand and change code. What is the purpose of this code?
+Choosing names that reveal intent can make it much easier to understand and change code. This is helpful to others as well as your future self. What is the purpose of this code?
 
 From this:
 ```java
@@ -163,6 +163,8 @@ public List<Cell> getFlaggedCells() {
 If you want to name a group of accounts use **accounts** try to avoid *accountList* (maybe its type is not a List)
 
 Beware of using names that are very similar *XYZFooBarClassForBlabla* and *XYZFooBarClassForBlablable*
+
+Using lower case *l* (looks like 1) and uppercase *O* (looks like 0) are also unhelpful.
 ## Make Meaningful Distinctions 
 
 Do not use number-series naming: a1, a2, ... aN
@@ -184,7 +186,20 @@ The same for methods, what I should do?:
 getActiveAccount() getActiveAccounts() getActiveAccountInfo()
 
 ## Use Pronounceable Names
-If you can't pronounce it you can't discuss it without sounding like an idiot.
+If you can't pronounce it you can't discuss it without sounding like an idiot. Example:
+```java
+// generation date, year, months, day, hour, minute, and second
+class DtaRcrd102 {
+	private Date genymdhms;
+	/* ... */
+}
+
+// better:
+class Customer {
+	private Date generationTimestamp;
+	/* ... */
+}
+```
 ## Use Searchable Names 
 Single letter names and numeric constants are not easy to locate across a body of text.
 i.e.:
@@ -205,18 +220,20 @@ for (int j=0; j < NUMBER_OF_TASKS; j++) {
 }
 ```
 ## Avoid Encodings 
-## Hungarian Notation 
-## Member Preﬁxes
+
+Don't use symbols, emojis.
+## Hungarian Notation, Member Preﬁxes
+
+Old examples from Fortran, BASIC. No longer likely to be applicable.
 ## Interfaces and Implementations 
 Leave interfaces unadorned:
 
 *ShapeFactory* and *ShapeFactoryImp* are better than *IShapeFactory* and *ShapeFactory*
 ## Avoid Mental Mapping 
-*r* is the lower-cased version of the url with the host and scheme removed... WTF!
-
-**Clarity is king**: professionals use their powers for good and write code that others can understand.
+Just because you *can* remember that `this` means `that` doesn't mean you should write your code that way.
+> One difference between a smart programmer and a professional programmer is that the professional understands *clarity is king*. Professionals use their powers for good and write code that others can understand.
 ## Class Names 
-A class name should not be a verb. Avoid words like Manager, Processor, Data, or Info.
+A class name should be a **noun**, not a verb. Avoid words like Manager, Processor, Data, or Info.
 Good names could be: Customer, WikiPage, Account, AddressParser.
 ## Method Names
 Methods should have verb or verb phrase names like postPayment, deletePage, save...
@@ -240,9 +257,9 @@ Avoid using the same word for two purposes (*add()* method could mean different 
 
 **Make your code as easy as possible to understand.**
 ## Use Solution Domain Names 
-Use pattern names: Factory, Visitor, Decorator, etc.
+Use pattern names: Factory, Visitor, Decorator, etc. The people who read your code will be programmers so if there is a commonly understood term, it's ok to use it.
 ## Use Problem Domain Names
-And you could ask a domain expert if you have doubts.
+And you could ask a domain expert if you have doubts when there is no 'programmer way' to define something. I.e. the term you use is familiar to people in the project, company, etc.
 ## Add Meaningful Context 
 Variables usually don't have a mean by themselves. You will need a context.
 
