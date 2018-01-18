@@ -309,13 +309,13 @@ A function do one thing though it contains calls to other functions. But those f
 We create functions to decompose a larger concept (the name of the function) into a set of steps at the next level of abstraction.
 
 ## Sections within Functions 
-A function that is divided into section will be probably doing more than one thing
+**A function that is divided into section will be probably doing more than one thing.**
 
 ## One Level of Abstraction per Function 
-Don't mix level of abstraction in a function. This is always confusing and will bring you a broken window effect.
+Don't mix levels of abstraction in a function. It gets harder to tell whether a particular expression is important of a small detail.
 
 ## Reading Code from Top to Bottom: The Stepdown Rule
-Write code like if was a top-down set of TO-paragraphs.
+Write code like a top-down set of TO-paragraphs where each paragraph provides further instructions on the one before it. TO build the page we include setups then include the test page. TO include setups we include the suite setup if this is a suite. TO include the suite setup...
 
 ## Switch Statements 
 Switch statements always do N things.
@@ -325,7 +325,7 @@ Use them to create polymorphic objects. Abstract Factory pattern.
 ## Use Descriptive Names
 You know that you are working with clean code when each routine turns out to be pretty much as you expected.
 
-Use descriptive names. Don't be afraid to make a name long.
+Use descriptive names. A long descriptive name is better than a short enigmatic one, and better than a long descriptive comment.
 
 Be consistent with your names, try always to use the same verbs, nouns, etc.
 
@@ -358,7 +358,7 @@ Split the function in two:
 
 ## Dyadic Functions
 They are harder to understand than monadic functions.
-*assertEquals(expected, actual)* ... where the expected should be? 
+*assertEquals(expected, actual)* ... it would take practice to remember which order to put the arguments in.
 
 ## Triads
 The are harder to understand than dyadic functions.
@@ -381,10 +381,10 @@ And we can do more meaning to the argument:
 
 ## Have No Side Effects 
 Functions should not do things that you don't expect.
-i.e: checkPassword(login, password) => inside initializes the user session.
+i.e: checkPassword(login, password) => inside initializes the user session...initializing the user session should be its own function.
 
 ## Output Arguments 
-The should be avoided with OO.
+The should be avoided with OOP. If you see `appendFooter(s)`, is `s` being appended to something, or are you appending something to `s`?
 *void appendFooter(StringBuffer report); => report.appendFooter();*
 
 ## Command Query Separation 
@@ -403,7 +403,7 @@ Try/catch's are ugly. It is better to extract try and catch methods.
 Methods with try/catch should only have this structure and nothing more.
 
 ## The Error.java Dependency Magnet 
-Error codes are usually in classes like Error.java (with constants). Avoid that, it is a dependency magnet (it is everywhere) and nobody wants to change it because you have to recompile/deploy everything.
+Error codes are usually in classes like Error.java (with constants). Avoid that, it is a dependency magnet (it is everywhere) and nobody wants to add new errors or change it because you have to recompile/deploy everything. Instead the tendency will be to re-use error codes for uses they aren't intended for.
 
 Use Exceptions instead of Error codes.
 
@@ -417,12 +417,13 @@ Things like "there should only be one return statement" is unnecessary when you 
 * Write ugly and long functions with a long list of arguments
 * You need to have unit tests that cover all that functions.
 * Then you can to massage and refine that code. You can break everything in classes and keep your test passing.
+
 ## Conclusion
 Functions are the verbs and classes are the nouns of the language of our system.
 
-You real goal is to tell the story of the System. You have to write functions that help you to tell that story.
-## SetupTeardownIncluder 
-## Bibliography
+Your real goal is to tell the story of the System. You have to write functions that help you to tell that story.
+
+
 
 # <a name="comments">4. Comments</a>
 If we were expressive enough in our programming language we would not need comments.
