@@ -428,11 +428,9 @@ Your real goal is to tell the story of the System. You have to write functions t
 # <a name="comments">4. Comments</a>
 If we were expressive enough in our programming language we would not need comments.
 
-The proper use of comments is to compensate for our failure to express yourself in code.
+Comments are always failures. **Express yourself in code instead!**
 
-Comments are always failures. **Express yourself in code!**
-
-Code changes and evolves and comments lie.
+Code changes and evolves...the comments don't always get moved or updated with code changes!
 
 ## Comments Do Not Make Up for Bad Code
 "Ooh, I would better comment that!" => No! You would be better clean it!
@@ -452,18 +450,24 @@ if (employee.isEligibleForFullBenefits()){
 
 ## Good Comments
 The only truly good comment is the comment you found a way not to write.
+
 ### Legal Comments
 Put all the terms and conditions into an external document.
+
 ### Informative Comments
 Useful information about the implementation and taken decisions.
+
 ### Explanation of Intent
 Take care that there is no better way, and then take even more care that they are accurate.
+
 ### Clariﬁcation
 If you do it take care that there is no better way and the are accurate.
+
 ### Warning of Consequences 
 Warn other programmers about certain consequences:
 - Maybe a test that lasts a lot => try to use @Ignore
 - Something that is not thread safe and you have to use "new" each time.
+
 ### TODO Comments
 It is not an excuse to leave bad code in the system.
 
@@ -471,29 +475,39 @@ You do not want your code to be littered with TODOS => san them regularly and el
 
 ### Ampliﬁcation
 If something is very very important you can amplify it.
+
 ### Javadocs in Public APIs
 If you are writing a public API => write good docs for it. (but they can lie as any other kind of comment).
+
 ## Bad Comments 
 Most comments fall into this category.
+
 ### Mumbling 
 A catch block empty with a comment => was the author trying to tell himself to come later to do it?
 
 Any comment that forces you to look in another module to know the meaning is wrong.
+
 ### Redundant Comments 
 * Less information than the code.
 * It is not easier to read than the code.
 * It is less precise
+
 ### Misleading Comments
+
 ### Mandated Comments
 **A rule that says that every function/property/variable must have a javadoc is stupid**
 
 You will finally get things like: @param author The author
+
 ### Journal Comments
-We have scm's => they should be completely removed.
+We have source control now => they should be completely removed.
+
 ### Noise Comments 
 Auto generated or very obvious comments that are nothing but noise.
+
 ### Scary Noise 
 Maybe with copy/paste errores... are they a bug?
+
 ### Don’t Use a Comment When You Can Use a Function or a Variable
 Consider the following stretch of code:
 
@@ -515,7 +529,7 @@ Things like:
 ```
 Noise, obvious and usually ignored... do not use banners
 ### Closing Brace Comments
-Try to shorten your functions instead.
+Might leave a comment to mark which braces close which part of the function. Better to write shorter functions without so much nesting.
 ### Attributions and Bylines
 Added by:... SCM's are a better place for this.
 ### Commented-Out Code
@@ -529,9 +543,7 @@ The comment should describe the code it appears near.
 Maybe the comment needs its own explanation...
 ### Function Headers
 Short functions do not need much description. We prefer well-chosen names than a comment header.
-### Javadocs in Nonpublic Code 
-### Example
-### Bibliography
+
 
 # <a name="formatting">5. Formatting</a>
 We want people to perceive that professionals have been at work... not to see a scrambled mass of code that looks like it was written by a bevy of drunken sailors.
@@ -543,8 +555,6 @@ In a team: define a single set of formatting rules that everybody should comply.
 Code formatting is about communication.
 
 Readability of code.
-
-The style and discipline survives to changes.
 ## Vertical Formatting 
 Small files are easier to understand than large files.
 
@@ -552,8 +562,8 @@ It is possible to build significand system(junit, tomcat, ant, fitnesse) with fi
 ## The Newspaper Metaphor 
 **We would like a source file to be like a newspaper article**:
 - At the top you expect a headline
-- The first paragraph gives you a synopsis  of the whole story.
-- As you continue down-ward the details increase
+- The first paragraph gives you a synopsis of the whole story.
+- As you continue downward the details increase
 
 In a source file: 
 high-level concepts and algorithms => lowest level functions and details
@@ -561,7 +571,7 @@ high-level concepts and algorithms => lowest level functions and details
 ## Vertical Openness Between Concepts 
 * line => expression or clause.
 * group of lines => complete thought.
-* thoughts are separated with black lines.
+* thoughts are separated with blank lines.
 
 ## Vertical Density 
 Useless comments in class's properties make the class more difficult to read it. Example
@@ -600,7 +610,7 @@ Control variables for loops => declare them within the loop statement
 Should be declared at the top of the class.
 Everybody should know where to go to see the declarations.
 ### Dependent functions
-If one functions calls another they should be vertically close, an the caller should be above the calle, if it is possible.
+If one functions calls another they should be vertically close, an the caller should be above the callee, if it is possible.
 ### Conceptual Affinity
 Group of functions performing a similar operation.
 They share common naming scheme and perform variations of the same task. We want them to be close together.
@@ -680,8 +690,6 @@ If the body of a while/for is a dummy make the body indented and surrounded by b
 
 ## Team Rules
 **Every programmer has his own favorite formatting rules, but if he works in a team, them the team rules**
-## Uncle Bob’s Formatting Rules
-See the book.
 
 # <a name="objects-and-data-structures">6. Objects and Data Structures</a>
 We keep our variables private. Nobody depends on them. Freedom to change their type or implementation. If you don't need them don't expose the with public getters an setters!
@@ -804,7 +812,7 @@ Developers put business logic in them => Error!
 Choose the right approach!
 * Flexibility to add new data types => objects
 * Flexibility to add new behaviors => data types and procedures
-## Bibliography
+
 
 # <a name="error-handling">7. Error Handling</a>
 Things can go wrong, we as programmers are responsible for making sure that our codes does what it needs to do => **and should be clear!**
@@ -842,13 +850,13 @@ Declaring the exception between you and *the catch* is a Open/Close Principle vi
 Encapsulation is broken because all functions in the path of a throw must know about details of that low-level exception.
 
 ## Provide Context with Exceptions
-Pass enough information to be able to log the error in the catch.
+Pass enough information to be able to log the error in the catch. A stack trace won't tell you the *intent* of the operation that failed.
 
 ## Deﬁne Exception Classes in Terms of a Caller’s Needs
 Sometimes is very useful to write a simple wrapper that catches an translates exceptions from a third-party API => minimize the dependencies upon it and you can move to other different library without much penalty.
 
 ## Deﬁne the Normal Flow 
-SPECIAL CASE PATTERN [Fowler]: you create a class or configure an object so that it handles a especial case for you => the client code does not have to deal with exceptional behavior because is encapsulated. 
+SPECIAL CASE PATTERN [Fowler]: you create a class or configure an object so that it handles a special case for you => the client code does not have to deal with exceptional behavior because is encapsulated. 
 
 Example:
 ```java
@@ -906,8 +914,8 @@ You have to deal with null, with if's or with assertions at the beginning assert
 
 A null in an argument is an indication of a problem.
 ## Conclusion
-Clean code is readable, but it must also be robust! These are not conflicting goals.
-## Bibliography
+Clean code is readable, but it must also be robust! These are not conflicting goals: error handling can be seen as a separate concern, independent of the main logic.
+
 
 # <a name="boundaries">8. Boundaries</a>
 ## Using Third-Party Code
