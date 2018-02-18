@@ -918,10 +918,11 @@ Clean code is readable, but it must also be robust! These are not conflicting go
 
 
 # <a name="boundaries">8. Boundaries</a>
-## Using Third-Party Code
-Natural tension between provider/user of an interface.
 
-**Provider** => focus on wide audience.  **User** => focus on their particular needs.
+How to integrate code with 3rd-party or open source software.
+
+## Using Third-Party Code
+Natural tension between provider/user of an interface. **Provider** => focus on wide audience.  **User** => focus on their particular needs.
 
 Example: java.util.Map
 Map is an interface with a lot of methods: clear, containsKey, containsValue, get, isEmpty, put, putAll, remove, size...
@@ -952,10 +953,10 @@ public class Sensor {
 Avoid returning it or accepting it as an argument in public APIs.
 
 ## Exploring and Learning Boundaries
-**Learning tests** instead of experimenting an trying out the new stuff in our production code, we could write some tests to explore our understanding of the third-party code.
-## Learning log4j 
+**Learning tests** instead of experimenting an trying out the new stuff in our production code, we could write some tests to explore our understanding of the third-party code. 
+ 
 ## Learning Tests Are Better Than Free
-With each release comes a new risk => we run the learning tests to see the changes.
+Since you have to learn the 3rd party code anyway, learning tests are an easy way to learn *and* future-proof use of the API. With each release comes a new risk => we run the learning tests to see the changes.
 
 Without these tests the migration is easier, without them we could stay with the old version longer than we should.
 ## Using Code That Does Not Yet Exist
@@ -967,22 +968,21 @@ See the Adapter pattern.
 When we use code that is out of our control special care must be taken to protect our investment and make sure future change is not too costly.
 
 Wrap them or use an Adapter to convert from our perfect interface to the provided interface.
-## Bibliography
 
 # <a name="unit-tests">9. Unit Tests</a>
-The Agile and TDD movements have encouraged many programmers to write unit test but many of them have missed important points of writing good tests.
+The Agile and TDD movements have encouraged many programmers to write unit tests but many of them have missed important points of writing good tests.
 
 ## The Three Laws of TDD 
 * **First Law**: You may not write production code until you have written a failing unit test.
 * **Second Law**: You may not write more of a unit test than is sufficient to fail, and not compiling is failing.
 * **Third Law**: You may not write more production code than is sufficient to pass the currently failing test.
 
-If we follow these rules: dozens of tests per day, hundreds of tests per month and thousands of tests every year. These tests can rival the size of the production code and can present a daunting management problem.
+If we follow these rules we will write dozens of tests per day, hundreds of tests per month and thousands of tests every year. These tests can rival the size of the production code and can present a daunting management problem.
 
 ## Keeping Tests Clean 
-Dirty tests are equivalent or worse than having no test.
+Dirty tests are equivalent or worse than having no tests! Need to follow the same rules of well-named variables, short & descriptive functions.
 
-When managers asked why their estimates were getting so large, the developers blamed the tests. In the end they were forced to discard the test suite entirely.
+Book example story: When managers asked why their estimates were getting so large, the developers blamed the tests. In the end they were forced to discard the test suite entirely.
 
 But without a test suite:
 * We lost the ability to make sure that changes work as expected and do not break other parts of our system.
@@ -1059,7 +1059,7 @@ It requires a continued refactoring.
 ## A Dual Standard 
 The code within the testing API will be simple, succint, expressive but it need not be as efficient as production code. It runs in a test environment and it has different needs.
 
-You can code that maybe break rules or is not very efficient but is ok if it makes the test easy to understand.
+You can write code that may break rules or is not very efficient but is ok if it makes the test easy to understand.
 
 Dual standard: There are things that you might never do in a production environment that are perfectly fine in a test environment.
 
@@ -1080,8 +1080,8 @@ Better than one assert per test.
 * **Timely**: Write them before the production code, if you do it after maybe the production code will be hard to test.
 
 ## Conclusion
-**If you let the tst rot, then your code will rot too. Keep your test clean!**
-## Bibliography
+**If you let the test rot, then your code will rot too. Keep your test clean!**
+
 
 # <a name="classes">10. Classes</a>
 
