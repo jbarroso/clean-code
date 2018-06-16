@@ -33,7 +33,7 @@ Small things matter. God is in the details.
 They introduce us the concept of Total Productive Maintenance (TMP) (1951 from the Japaneses):
 * **Seiri**: Knowing where things are: naming is crucial.
 * **Seiton**: A piece of code should be where you expect to find it.
-* **Seiso**: Keep the workplace free of unusefull things (comments, etc).
+* **Seiso**: Keep the workplace free of unuseful things (comments, etc).
 * **Seiketsu**: Standardization. The group agrees about how to keep the workplace clean.
 * **Shutsuke**: Discipline. Follow the practices.
 
@@ -1198,6 +1198,9 @@ We incorporate new features by extending the system, not by making modifications
 ### C3: Redundant Comment 
 ### C4: Poorly Written Comment
 ### C5: Commented-Out Code 
+**Just don't do it** If you want to do this; just slap yourself instead and ask what is wrong with me. Most people won't delete others commented out code since they assume there is a good reason for it. So it grows stale like a fine cheese(but bad cheese).
+
+
 
 ## Environment 
 ### E1: Build Requires More Than One Step
