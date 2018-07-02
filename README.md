@@ -1095,7 +1095,7 @@ Like a newspapaer article:
 * private functions
 
 ## Encapsulation 
-Utitlity functions shuld be private but could be protected to be accesible by tests in the same package.
+Utitlity functions should be private but could be protected to be accesible by tests in the same package.
 
 ## Classes Should Be Small!
 ... and then should be smaller than that!.
