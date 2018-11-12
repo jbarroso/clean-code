@@ -841,7 +841,7 @@ Try blocks are like transactions => *catch* has to leave your program in a consi
 Write test that force exceptions and add behavior to satisfy your test.
 
 ## Use Unchecked Exceptions 
-Your code would not compile if the signature don't match what your code do.
+Your code would not compile if the signature don't match to what your code do.
 
 Some programing languages do not have it and you can build robust software with them.
 
