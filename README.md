@@ -287,8 +287,8 @@ First: they should be small. Second: they should be smaller than that.
 
 * Functions should hardly ever be **20 lines long**.
 * Functions should be **transparently obvious**.
-* Each function told a story.
-* Each function led you to a next thing in a compelling order.
+* Each function tells a story.
+* Each function leads you to a next thing in a compelling order.
 
 ## Blocks and Indenting
 
