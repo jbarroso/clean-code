@@ -68,7 +68,7 @@ Well specified requirements can act as executable tests for our code.
 
 Bad code can bring a company down.
 
-There are not excuses for bad code, no reasons: your boss does not give you time, you want to finish faster to get more backlog's stories finished...
+There are no excuses for bad code, no reasons: your boss does not give you time, you want to finish faster to get more backlog's stories finished...
 
 I will clean it later... **Later equals never**.
 
