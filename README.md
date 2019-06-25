@@ -958,7 +958,7 @@ Avoid returning it or accepting it as an argument in public APIs.
 ## Learning Tests Are Better Than Free
 Since you have to learn the 3rd party code anyway, learning tests are an easy way to learn *and* future-proof use of the API. With each release comes a new risk => we run the learning tests to see the changes.
 
-Without these tests the migration is easier, without them we could stay with the old version longer than we should.
+These boundary tests ease the migration, so that we don't have to stay with the old version longer than we should.
 ## Using Code That Does Not Yet Exist
 Sometimes you have boundaries in your system that represents things that had not been designed yet.
 
