@@ -558,7 +558,7 @@ Readability of code.
 ## Vertical Formatting 
 Small files are easier to understand than large files.
 
-It is possible to build significant system(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
+It is possible to build significant systems(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
 ## The Newspaper Metaphor 
 **We would like a source file to be like a newspaper article**:
 - At the top you expect a headline
