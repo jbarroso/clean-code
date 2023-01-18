@@ -558,7 +558,7 @@ Readability of code.
 ## Vertical Formatting 
 Small files are easier to understand than large files.
 
-It is possible to build significand system(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
+It is possible to build significant systems(junit, tomcat, ant, fitnesse) with files between **200-500 lines.**
 ## The Newspaper Metaphor 
 **We would like a source file to be like a newspaper article**:
 - At the top you expect a headline
@@ -1113,14 +1113,14 @@ Class **description in 25 words** without "if", "and", "or", "but"...
 
 Too many of us think that we are done once the program works. We move on the next problem rather than going back and breaking the classes into decoupled units with single responsibilities.
 
-We have to organize system complexity. A developer should know where to llok to find things and need only understand the directly affected complexity at any given time.
+We have to organize system complexity. A developer should know where to look to find things and need only understand the directly affected complexity at any given time.
 
 We want systems composed of many small classes. Single responsibility and single reason to change. They colaborate with a few others to achieve the desired system behavior.
 
 ## Cohesion
 Small number of instance variables => each method manipulates one or more of those variables. => more variables manipulate => more cohesive a method is.
 
-A class in wich each variable is used by each method is maximally cohesive.
+A class in which each variable is used by each method is maximally cohesive.
 
 ## Maintaining Cohesion Results in Many Small Classes
 When classes lose cohesion split them!
